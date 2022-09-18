@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/logic-calculator/static/css/main.ff4b04ce.css",
+    "main.css": "/logic-calculator/static/css/main.2786c4d5.css",
     "main.js": "/logic-calculator/static/js/main.56f775d6.js",
     "index.html": "/logic-calculator/index.html",
-    "main.ff4b04ce.css.map": "/logic-calculator/static/css/main.ff4b04ce.css.map",
+    "main.2786c4d5.css.map": "/logic-calculator/static/css/main.2786c4d5.css.map",
     "main.56f775d6.js.map": "/logic-calculator/static/js/main.56f775d6.js.map"
   },
   "entrypoints": [
-    "static/css/main.ff4b04ce.css",
+    "static/css/main.2786c4d5.css",
     "static/js/main.56f775d6.js"
   ]
 }
