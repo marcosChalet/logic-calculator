@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './Display.css'
+import './index.css'
 
 export default props => 
    <div className="display">{props.formula}</div>
