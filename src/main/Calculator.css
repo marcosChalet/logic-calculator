@@ -1,8 +1,31 @@
 .calculator {
-   height: 500px;
-   width: 450px;
-
+   width: 260px;
+   height: 380px;
    display: grid;
    grid-template-columns: repeat(4, 25%);
-   grid-template-rows: 140px repeat(4, 90px);
+   grid-template-rows: 100px repeat(4, 70px);
+   font-size: .7em;
+}
+
+@media screen and (min-width: 576px) {
+   .calculator {
+      width: 300px;
+      height: 410px;
+      grid-template-rows: 90px repeat(4, 80px);
+   }
+}
+
+@media screen and (min-width: 768px) {
+   .calculator {
+      width: 340px;
+      height: 440px;
+      grid-template-rows: 100px repeat(4, 85px);
+      font-size: .9em;
+   }
+}
+
+@media screen and (min-width: 1200px) {
+   .calculator {
+      width: 360px;
+   }
 }
