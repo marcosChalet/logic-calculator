@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.ff4b04ce.css",
-    "main.js": "/static/js/main.56f775d6.js",
-    "index.html": "/index.html",
-    "main.ff4b04ce.css.map": "/static/css/main.ff4b04ce.css.map",
-    "main.56f775d6.js.map": "/static/js/main.56f775d6.js.map"
+    "main.css": "/logic-calculator/static/css/main.ff4b04ce.css",
+    "main.js": "/logic-calculator/static/js/main.56f775d6.js",
+    "index.html": "/logic-calculator/index.html",
+    "main.ff4b04ce.css.map": "/logic-calculator/static/css/main.ff4b04ce.css.map",
+    "main.56f775d6.js.map": "/logic-calculator/static/js/main.56f775d6.js.map"
   },
   "entrypoints": [
     "static/css/main.ff4b04ce.css",
