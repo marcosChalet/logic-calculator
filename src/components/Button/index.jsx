@@ -2,7 +2,7 @@ import React from 'react'
 
 import './index.css'
 
-export default props => {
+function btn(props) {
    
    let classes = 'btn '
    classes += props.enter ? 'enter' : ''
@@ -14,3 +14,5 @@ export default props => {
       </button>
    )
 }
+
+export default btn
