@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/logic-calculator/static/css/main.2786c4d5.css",
-    "main.js": "/logic-calculator/static/js/main.56f775d6.js",
+    "main.css": "/logic-calculator/static/css/main.c57fa865.css",
+    "main.js": "/logic-calculator/static/js/main.17481964.js",
     "index.html": "/logic-calculator/index.html",
-    "main.2786c4d5.css.map": "/logic-calculator/static/css/main.2786c4d5.css.map",
-    "main.56f775d6.js.map": "/logic-calculator/static/js/main.56f775d6.js.map"
+    "main.c57fa865.css.map": "/logic-calculator/static/css/main.c57fa865.css.map",
+    "main.17481964.js.map": "/logic-calculator/static/js/main.17481964.js.map"
   },
   "entrypoints": [
-    "static/css/main.2786c4d5.css",
-    "static/js/main.56f775d6.js"
+    "static/css/main.c57fa865.css",
+    "static/js/main.17481964.js"
   ]
 }
