@@ -39,25 +39,25 @@ export function isValid(formula, opLogic) {
           return false
     }
 
-    if (formula[i] === '(' && formula[i+1] === ')')
+    if (formula[i] === '(' && formula[i+1] === ')') // () is invalid
       return false
 
-    if (formula[i] === ')' && isLetter(formula[i+1]))
+    if (formula[i] === ')' && isLetter(formula[i+1])) // )a is invalid
       return false
 
     if (isBynaryOperator(formula[i], opLogic)) {
-      if (isBynaryOperator(formula[i+1], opLogic))
+      if (isBynaryOperator(formula[i+1], opLogic)) // ->-> is invalid
         return false
 
-      if (formula[i-1] === '(' || formula[i+1] === ')')
+      if (formula[i-1] === '(' || formula[i+1] === ')') // (->) is invalid
         return false
     }
 
     if (isUnary(formula[i], opLogic.not)) {
-      if (isBynaryOperator(formula[i+1], opLogic))
+      if (isBynaryOperator(formula[i+1], opLogic)) // ~-> is invalid
         return false
 
-      if (formula[i+1] === ')')
+      if (formula[i+1] === ')') // ~) is invalid
         return false
     }
   }
