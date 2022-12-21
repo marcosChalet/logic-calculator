@@ -1,71 +1,59 @@
-import React, {Component} from 'react'
+import React, { useState } from 'react'
 
 import './Calculator.css'
 import Display from '../components/Display'
 import Button from '../components/Button'
 
-const initialState = {
-   formula: ''
-}
-
 const opLogic = {
-   and: '\u2227',
-   or:  '\u2228',
-   not: '\u00AC',
-   del: '\u00AB',
-   enter: '\u23CE',
-   implication: '\u21D2'
+  and: '\u2227',
+  or:  '\u2228',
+  not: '\u00AC',
+  del: '\u00AB',
+  enter: '\u23CE',
+  implication: '\u21D2'
 }
 
-export default class Calculator extends Component {
+const Calculator = _ => {
 
-   state = {...initialState}
+  const [formula, setFormula] = useState('')
 
-   constructor(props) {
-      super(props)
-      this.add = this.add.bind(this)
-      this.pop = this.pop.bind(this)
-      this.calculate = this.calculate.bind(this)
-   }
+  const add = op => {
+    setFormula(formula + op)
+  }
 
-   add(valor) {
-      const formula = this.state.formula + valor
-      this.setState({formula})
-   }
+  const pop = _ => {
+    let auxFormula = formula
+    if (auxFormula !== '') {
+      auxFormula = auxFormula.substring(0, auxFormula.length - 1)
+      setFormula(auxFormula)
+    }
+  }
 
-   pop() {
-      let formula = this.state.formula
-      if (formula !== '') {
-         formula = formula.substring(0, formula.length - 1)
-         this.setState({formula})
-      }
-   }
+  const calculate = _ => {
+    const auxFormula = ''
+    setFormula(auxFormula)
+    console.log('Calcula a tabela verdade, se é satisfazível e a árvore de subformulas')
+  }
 
-   calculate() {
-      const formula = ''
-      this.setState({formula})
-      console.log('Calcula a tabela verdade, se é satisfazível e a árvore de subformulas')
-   }
-
-   render() {
-      return (
-         <div className="calculator">
-            <Display formula={this.state.formula} />
-            <Button click={this.add} name="(" />
-            <Button click={this.add} name=")" />
-            <Button click={this.add} name={opLogic.and} />
-            <Button click={this.add} name={opLogic.or} />
-            <Button click={this.add} name={opLogic.implication} />
-            <Button click={this.add} name={opLogic.not} />
-            <Button click={this.pop} name={opLogic.del} />
-            <Button click={this.calculate} name={opLogic.enter} enter />
-            <Button click={this.add} name="P" />
-            <Button click={this.add} name="Q" />
-            <Button click={this.add} name="R" />
-            <Button click={this.add} name="A"/>
-            <Button click={this.add} name="B"/>
-            <Button click={this.add} name="C"/>
-         </div>
-      )
-   }
+  return (
+    <div className="calculator">
+    <Display formula={ formula } />
+    <Button click={add} op="(" />
+    <Button click={add} op=")" />
+    <Button click={add} op={opLogic.and} />
+    <Button click={add} op={opLogic.or} />
+    <Button click={add} op={opLogic.implication} />
+    <Button click={add} op={opLogic.not} />
+    <Button click={pop} op={opLogic.del} />
+    <Button click={calculate} op={opLogic.enter} enter />
+    <Button click={add} op="P" />
+    <Button click={add} op="Q" />
+    <Button click={add} op="R" />
+    <Button click={add} op="A"/>
+    <Button click={add} op="B"/>
+    <Button click={add} op="C"/>
+    </div>
+  )
 }
+
+export default Calculator
