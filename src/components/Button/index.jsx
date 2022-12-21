@@ -2,17 +2,17 @@ import React from 'react'
 
 import './index.css'
 
-function btn(props) {
-   
-   let classes = 'btn '
-   classes += props.enter ? 'enter' : ''
+const btn = props => {
 
-   return( 
-      <button className={classes} 
-      onClick={() => props.click && props.click(props.name)} >
-         {props.name}
-      </button>
-   )
+  let classes = 'btn '
+  classes += props.enter ? 'enter' : ''
+
+  return( 
+    <button className={classes} 
+    onClick={() => props.click && props.click(props.op)} >
+    {props.op}
+    </button>
+  )
 }
 
 export default btn
