@@ -7,6 +7,25 @@
    font-size: .7em;
 }
 
+.content-modal {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  width: 900px;
+  height: 400px;
+  background-color: #CCC;
+  color: #000;
+}
+
+.show {
+  display: block;
+}
+
 @media screen and (min-width: 576px) {
    .calculator {
       width: 300px;

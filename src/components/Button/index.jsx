@@ -9,7 +9,11 @@ const btn = props => {
 
   return( 
     <button className={classes} 
-    onClick={() => props.click && props.click(props.op)} >
+      onClick={() => {
+        props.click && props.click(props.op)
+        props.calc && props.calc()
+      }
+    } >
     {props.op}
     </button>
   )
