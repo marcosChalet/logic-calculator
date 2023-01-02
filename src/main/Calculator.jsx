@@ -1,4 +1,4 @@
-import React, { useState, useRef, Fragment } from 'react'
+import React, { useState, Fragment } from 'react'
 
 import './Calculator.css'
 import Display from '../components/Display'
@@ -15,11 +15,11 @@ const opLogic = {
   implication: '\u21D2'
 }
 
-const Modal = props => {
-  console.log('aqui: ', props.className)
+const Modal = ({ fn }) => {
+  const setModal = fn()
   return (
-    <div className="content-modal">
-      <div ref={props.modalRef} className={`${props.className} modal`}>
+    <div className="content-modal" >
+      <div className={`show modal`} onClick={() => setModal(false)} >
         <h1>Modal</h1>
       </div>
     </div>
@@ -29,26 +29,7 @@ const Modal = props => {
 const Calculator = _ => {
 
   const [formula, setFormula] = useState('')
-  const [dropdown, setDropdown] = useState('')
-  const modalRef = useRef(null)
-
-  const showDropdown = _ => {
-    const asd = 'show'
-    setDropdown(asd)
-    console.log('mostrando: ', dropdown)
-    document.body.addEventListener('click', closeDropdown)
-  }
-
-  const closeDropdown = event => {
-    event.stopPropagation()
-    const contain = modalRef.current.contains(event.target)
-
-    if (contain) {
-      setDropdown('')
-      console.log('removendo')
-      document.body.removeEventListener('click', closeDropdown)
-    }
-  }
+  const [modal, setModal] = useState(false)
 
   const add = op => {
     setFormula(formula + op)
@@ -67,9 +48,13 @@ const Calculator = _ => {
     setFormula('')
   }
 
+  const showModal = _ => {
+    setModal(true)
+  }
+
   return (
     <Fragment>
-      <Modal className={dropdown} modalRef={modalRef} />
+      { modal && <Modal className={"show"} fn={() => setModal} /> }
       <div className="calculator">
         <Display formula={ formula } />
         <Button click={add} op="(" />
@@ -79,7 +64,7 @@ const Calculator = _ => {
         <Button click={add} op={opLogic.implication} />
         <Button click={add} op={opLogic.not} />
         <Button click={pop} op={opLogic.del} />
-        <Button click={calculate} calc={showDropdown}
+        <Button click={calculate} calc={showModal}
           op={opLogic.enter} enter />
         <Button click={add} op="P" />
         <Button click={add} op="Q" />
